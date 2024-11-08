@@ -12,8 +12,14 @@ def gen_frames():
         if not success:
             break
         else:
-            detector=cv2.CascadeClassifier('harcascades\haarcascade_frontalface_alt.xml')
-            eye_cascade = cv2.CascadeClassifier('harcascades\haarcascade_eye.xml')
+            detector = cv2.CascadeClassifier(r'C:\Users\DELL\Desktop\face_detection_using_flask_and_opencv\haarcascades\haarcascade_frontalface_alt.xml')
+            eye_cascade = cv2.CascadeClassifier(r'C:\Users\DELL\Desktop\face_detection_using_flask_and_opencv\haarcascades\haarcascade_eye.xml')
+
+            if detector.empty():
+                print("Error loading face cascade file")
+            if eye_cascade.empty():
+                print("Error loading eye cascade file")
+
             faces=detector.detectMultiScale(frame,1.1,7)
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
              #Draw the rectangle around each face
