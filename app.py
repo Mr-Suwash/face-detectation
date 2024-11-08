@@ -6,11 +6,12 @@ app=Flask(__name__)
 camera = cv2.VideoCapture(0)
 
 
+
 def gen_frames():  
     while True:
         success, frame = camera.read()  # read the camera frame
         if not success:
-            break
+            break 
         else:
             detector = cv2.CascadeClassifier(r'C:\Users\DELL\Desktop\face_detection_using_flask_and_opencv\haarcascades\haarcascade_frontalface_alt.xml')
             eye_cascade = cv2.CascadeClassifier(r'C:\Users\DELL\Desktop\face_detection_using_flask_and_opencv\haarcascades\haarcascade_eye.xml')
