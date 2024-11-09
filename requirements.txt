@@ -1,2 +1,2 @@
-flask
-opencv-python
+1. flask
+2. opencv-python
